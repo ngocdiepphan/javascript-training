@@ -14,6 +14,7 @@ export default class UserController {
     this.view.bindCallback("signIn", this.signIn);
     this.view.bindCallback("signUp", this.signUp);
     this.view.bindCallback("menuToggle");
+    this.view.bindCallback("newToggle");
   };
 
   signIn = async (email, password) => {

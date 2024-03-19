@@ -13,6 +13,11 @@ export default class UserView {
     this.selectEl = document.querySelector(".navbar-user__icon-menu");
     this.drawerEl = document.querySelector(".drawer");
     this.isShowDrawer = false;
+
+    // Toggle button new
+    this.selectNewEl = document.querySelector(".btn__drawer");
+    this.formEl = document.querySelector(".modal");
+    this.isShowForm =false;
   }
 
   bindCallback = (event, handler) => {
@@ -25,6 +30,9 @@ export default class UserView {
         break;
       case "menuToggle":
         bindEvent(this.selectEl, "click", this.menuToggle); // Toggle menu
+        break;
+      case "newToggle":
+        bindEvent(this.selectNewEl, "click", this.newToggle); // Toggle button new
         break;
       default:
         break;
@@ -39,6 +47,17 @@ export default class UserView {
       this.drawerEl.classList.remove("show")
     } else {
       this.drawerEl.classList.add("show")
+    }
+  }
+
+  //Toggle button new
+  newToggle = (event) => {
+    event.preventDefault();
+
+    if (this.formEl.classList.contains("show-form")) {
+      this.formEl.classList.remove("show-form")
+    } else {
+      this.formEl.classList.add("show-form")
     }
   }
 
