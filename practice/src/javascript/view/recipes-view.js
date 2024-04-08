@@ -27,12 +27,6 @@ export default class RecipeView {
 
   bindCallback = (event, handler) => {
     switch (event) {
-      // case "signIn":
-      //   bindEvent(this.signInFormEl, "submit", this.signIn(handler));
-      //   break;
-      // case "signUp":
-      //   bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
-      //   break;
       case "navigationItem":
         delegate(
           this.navigationEl,
@@ -69,7 +63,7 @@ export default class RecipeView {
         this.sidebarDetailEl = document.getElementById("panel-details");
         delegate(
           this.sidebarDetailEl,
-          ".btn-delete-recipes",
+          ".btn-delete-recipe",
           "click",
           this.deleteRecipe(handler)
         );

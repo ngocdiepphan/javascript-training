@@ -12,15 +12,6 @@ export default class RecipeController {
     this.view.bindCallback("addRecipe", this.handleAddRecipe);
   };
 
-  /**
-   * The handleViewRecipes function displays the recipe list on the interface.
-   */
-  handleViewRecipes = async () => {
-    const { data } = await this.getRecipes();
-    this.model.setRecipes(data);
-    this.view.renderTableRecipes(data);
-    this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails);
-  };
 
   /**
    * The getRecipes function retrieves a list of recipes from the server through UserService.
@@ -38,16 +29,6 @@ export default class RecipeController {
   handleShowRecipeDetails = (recipeId) => {
     const recipe = this.model.getRecipeById(recipeId);
     this.view.showRecipeDetails(recipe);
-  };
-
-  /**
-   * The handleDeleteRecipe function deletes a recipe.
-   * @param {string} recipeId - The ID of the recipe to delete.
-   */
-  handleDeleteRecipe = async (recipeId) => {
-    await RecipeService.deleteRecipe(recipeId);
-    alert("Delete recipe successfully!");
-    this.handleViewRecipes();
   };
 
   /**
@@ -82,6 +63,29 @@ export default class RecipeController {
     } catch (error) {
       alert("Failed to update user");
     }
+  };
+
+
+  /**
+   * The handleDeleteRecipe function deletes a recipe.
+   * @param {string} recipeId - The ID of the recipe to delete.
+   */
+  handleDeleteRecipe = async (recipeId) => {
+    const recipe = this.model.getRecipeById(recipeId);
+    await RecipeService.deleteRecipe(recipeId, {...recipe });
+    console.log("delete recipe", recipeId);
+    alert("Delete recipe successfully!");
+    this.handleViewRecipes();
+  };
+
+   /**
+   * The handleViewRecipes function displays the recipe list on the interface.
+   */
+   handleViewRecipes = async () => {
+    const { data } = await this.getRecipes();
+    this.model.setRecipes(data);
+    this.view.renderTableRecipes(data);
+    this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails);
   };
 
   /**

@@ -58,6 +58,7 @@ const delegate = (target, selector, type, handler) => {
         potentialElements,
         targetElement.closest(selector)
       ) >= 0;
+
     if (hasMatch) handler.call(targetElement, event);
   };
 
