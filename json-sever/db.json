@@ -451,13 +451,13 @@
       "imageURL": "http://localhost:1234/gourmet-fillet-in-roasted-almond-sauce.a5f070e7.png"
     },
     {
-      "id": "31c8",
-      "name": "Figaaaaaaaaaaaaa",
-      "imageURL": "http://localhost:1234/Ffig-and-raisins-oatmeal.d665c3ad.png",
-      "category": "",
-      "creator": "Henk",
-      "ratings": "1",
-      "description": "Panna"
+      "id": "7865",
+      "name": "Pizza",
+      "imageURL": "http://localhost:1234/fancty-glazed-dounts.0bfa4c3f.png",
+      "category": "Desserts",
+      "creator": "aaaa",
+      "ratings": "4",
+      "description": "a"
     }
   ]
 }
