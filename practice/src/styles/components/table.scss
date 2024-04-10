@@ -34,6 +34,10 @@
     border-bottom: toRem(1) solid #edeff0;
     height: toRem(45);
 
+    &:hover {
+      background-color: rgb(236, 243, 249);
+    }
+
     &__cell {
       vertical-align: middle;
       padding: toRem(20);
