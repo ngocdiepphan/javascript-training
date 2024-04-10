@@ -7,11 +7,6 @@ export default class UserController {
   }
 
   init = async () => {
-    this.view.bindCallback("signIn", this.handleSignIn);
-    this.view.bindCallback("signUp", this.signUp);
-    this.view.bindCallback("menuToggle");
-    this.view.bindCallback("newToggle");
-    this.view.bindCallback("closeToggle");
     this.view.bindCallback("editUser", this.handleEditUser);
     this.view.bindCallback("deleteUser", this.handleDeleteUser);
 
@@ -24,9 +19,6 @@ export default class UserController {
       await this.handleViewUsers();
       this.view.setNavigationActive("users");
     }
-
-    this.view.bindCallback("displayPanel");
-    this.view.bindCallback("backToggle");
   };
 
   /**
@@ -88,9 +80,9 @@ export default class UserController {
     return await UserService.fetchUsers();
   };
 
-  // /**
-  //  * The handleViewRecipes function displays the recipes list on the interface.
-  //  */
-  handleViewRecipes = async () => {
-  };
+  // // /**
+  // //  * The handleViewRecipes function displays the recipes list on the interface.
+  // //  */
+  // handleViewRecipes = async () => {
+  // };
 }
