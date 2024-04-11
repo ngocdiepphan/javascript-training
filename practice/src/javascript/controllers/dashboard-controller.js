@@ -8,7 +8,6 @@ export default class DashBoardController {
     this.view.bindCallback("newToggle");
     this.view.bindCallback("closeToggle");
     this.view.bindCallback("displayPanel");
-    this.view.bindCallback("backToggle");
   };
 
 }
