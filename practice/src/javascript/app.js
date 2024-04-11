@@ -64,7 +64,7 @@ window.addEventListener("load", () => {
           document
             .querySelector(".navigation__item[data-id='users']")
             .classList.add("active");
-          const urlParams = new URLSearchParams(window.location.search);
+          let urlParams = new URLSearchParams(window.location.search);
           urlParams.set("nav", "users");
           newRecipesBtn.classList.add("hide");
           break;
