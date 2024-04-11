@@ -11,7 +11,6 @@ export default class DashBoardView {
 
     // Toggle item recipe
     this.navigationEl = document.querySelector(".navigation");
-    // this.toolEl = document.querySelector(".toolbar__title");
     this.panelEl = document.querySelector(".panel");
   }
 
@@ -58,15 +57,14 @@ export default class DashBoardView {
     }
   };
 
-
   /**
    * The displayPanel function displays or hides a panel on the user interface when a click event occurs.
    * @param {object} event - Click event object.
    */
   displayPanel = (event) => {
     event.preventDefault();
-    // const detailPanel = document.getElementById("panel-details");
-    // detailPanel.classList.toggle("show-panel");
+    const detailPanel = document.getElementById("panel-details");
+    detailPanel.classList.toggle("show-panel");
     this.bindCallback("saveUsers");
   };
 }

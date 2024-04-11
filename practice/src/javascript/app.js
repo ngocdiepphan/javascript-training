@@ -64,7 +64,7 @@ window.addEventListener("load", () => {
           document
             .querySelector(".navigation__item[data-id='users']")
             .classList.add("active");
-          urlParams = new URLSearchParams(window.location.search);
+          const urlParams = new URLSearchParams(window.location.search);
           urlParams.set("nav", "users");
           newRecipesBtn.classList.add("hide");
           break;
@@ -98,10 +98,10 @@ window.addEventListener("load", () => {
         setNavigationActive(type);
 
         if (type === "users") {
-          toolEl = document.querySelector(".toolbar__title");
+          const toolEl = document.querySelector(".toolbar__title");
           toolEl.textContent = "User";
         } else {
-          toolEl = document.querySelector(".toolbar__title");
+          const toolEl = document.querySelector(".toolbar__title");
           toolEl.textContent = "Recipes";
         }
 
