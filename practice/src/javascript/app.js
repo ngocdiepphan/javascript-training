@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 import UserModel from "./models/user-model.js";
 import UserView from "./view/user-view.js";
 import UserController from "./controllers/user-controller.js";
@@ -21,13 +21,18 @@ window.addEventListener("load", () => {
   );
   authenticationController.init();
 
-  const user = localStorage.getItem("user");
+  const user = JSON.parse(localStorage.getItem("user"));
   const pathname = window.location.pathname;
-  if (!user && pathname !== "/login") {
-    window.location.replace("login");
+
+  if (user && pathname !== "/dashboard.html") {
+    window.location.replace("index.html");
   }
 
   if (pathname == "/dashboard.html") {
+    if (user?.role !== "admin") {
+      window.location.replace("login.html");
+    }
+
     const userController = new UserController(new UserModel(), new UserView());
     const recipesController = new RecipeController(
       new RecipeModel(),
@@ -42,24 +47,38 @@ window.addEventListener("load", () => {
     dashboardController.init();
 
     const setNavigationActive = (type) => {
-      document.querySelector(".navigation__item.active") ?.classList.remove("active");
+      document
+        .querySelector(".navigation__item.active")
+        ?.classList.remove("active");
       const newRecipesBtn = document.getElementById("new-recipes");
       const detailPanel = document.querySelector(".content-dashboard");
       switch (type) {
         case "users":
-          document.querySelector('.content-dashboard').classList.remove("content-recipes")
-          document.querySelector('.content-dashboard').classList.add("content-users")
+          document
+            .querySelector(".content-dashboard")
+            .classList.remove("content-recipes");
+          document
+            .querySelector(".content-dashboard")
+            .classList.add("content-users");
           detailPanel.classList.remove("show-panel");
-          document.querySelector(".navigation__item[data-id='users']").classList.add("active");
+          document
+            .querySelector(".navigation__item[data-id='users']")
+            .classList.add("active");
           urlParams = new URLSearchParams(window.location.search);
           urlParams.set("nav", "users");
           newRecipesBtn.classList.add("hide");
           break;
         case "recipes":
-          document.querySelector('.content-dashboard').classList.add("content-recipes")
-          document.querySelector('.content-dashboard').classList.remove("content-users")
+          document
+            .querySelector(".content-dashboard")
+            .classList.add("content-recipes");
+          document
+            .querySelector(".content-dashboard")
+            .classList.remove("content-users");
           detailPanel.classList.remove("show-panel");
-          document.querySelector(".navigation__item[data-id='recipes']").classList.add("active");
+          document
+            .querySelector(".navigation__item[data-id='recipes']")
+            .classList.add("active");
           urlParams = new URLSearchParams(window.location.search);
           urlParams.set("nav", "recipe");
           newRecipesBtn.classList.remove("hide");
