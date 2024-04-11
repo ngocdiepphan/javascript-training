@@ -10,6 +10,7 @@ body {
 	font-size: $fs-x-medium;
   font-family: $font-primary;
 	word-wrap: break-word;
+  height: 100%;
 }
 
 a {
@@ -18,4 +19,5 @@ a {
 
 html {
   font-size: calc(var(--default-font-size) * 1px);
+  height: 100%;
 }
