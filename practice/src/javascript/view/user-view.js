@@ -117,6 +117,12 @@ export default class UserView {
       email,
     });
     this.userDetailsContainerEl.classList.add("show-panel");
+    const btnBackEl = document.querySelector(".content-users .icon-back");
+    btnBackEl.addEventListener("click", ()=> {
+      const detailPanel = document.querySelector(".content-dashboard");
+      detailPanel.classList.remove("show-panel");
+
+    });
   };
 
   /**
