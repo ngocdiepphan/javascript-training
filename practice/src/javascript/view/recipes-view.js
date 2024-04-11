@@ -107,6 +107,11 @@ export default class RecipeView {
       createdAt,
     });
     this.userDetailsContainerEl.classList.add("show-panel");
+    const btnBackEl = document.querySelector(".content-recipes .icon-back");
+    btnBackEl.addEventListener("click", ()=> {
+      const detailPanel = document.querySelector(".content-dashboard");
+      detailPanel.classList.remove("show-panel");
+    })
   };
 
   /**

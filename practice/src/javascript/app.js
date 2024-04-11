@@ -44,14 +44,21 @@ window.addEventListener("load", () => {
     const setNavigationActive = (type) => {
       document.querySelector(".navigation__item.active") ?.classList.remove("active");
       const newRecipesBtn = document.getElementById("new-recipes");
+      const detailPanel = document.querySelector(".content-dashboard");
       switch (type) {
         case "users":
+          document.querySelector('.content-dashboard').classList.remove("content-recipes")
+          document.querySelector('.content-dashboard').classList.add("content-users")
+          detailPanel.classList.remove("show-panel");
           document.querySelector(".navigation__item[data-id='users']").classList.add("active");
           urlParams = new URLSearchParams(window.location.search);
           urlParams.set("nav", "users");
           newRecipesBtn.classList.add("hide");
           break;
         case "recipes":
+          document.querySelector('.content-dashboard').classList.add("content-recipes")
+          document.querySelector('.content-dashboard').classList.remove("content-users")
+          detailPanel.classList.remove("show-panel");
           document.querySelector(".navigation__item[data-id='recipes']").classList.add("active");
           urlParams = new URLSearchParams(window.location.search);
           urlParams.set("nav", "recipe");

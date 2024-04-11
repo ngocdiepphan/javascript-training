@@ -65,8 +65,8 @@ export default class DashBoardView {
    */
   displayPanel = (event) => {
     event.preventDefault();
-    const detailPanel = document.getElementById("panel-details");
-    detailPanel.classList.toggle("show-panel");
+    // const detailPanel = document.getElementById("panel-details");
+    // detailPanel.classList.toggle("show-panel");
     this.bindCallback("saveUsers");
   };
 }

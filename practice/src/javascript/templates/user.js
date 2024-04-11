@@ -52,7 +52,7 @@ const renderUserTableTemplate = (data) => {
 const renderUserDetails = (data) => {
   return `
     <div class="panel__edit">
-      <span class="panel__icon-back drawer__user-icon" id="icon-back"></span>
+      <span class="panel__icon-back drawer__user-icon icon-back"></span>
       <button class="btn__general">General</button>
     </div>
 
