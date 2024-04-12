@@ -1,3 +1,4 @@
+import { loadEnvFile } from "process";
 import { bindEvent } from "../helpers";
 
 export default class AuthenticationView {
@@ -9,6 +10,7 @@ export default class AuthenticationView {
     this.userNameEl = document.getElementById("username");
     this.passwordConfirmEl = document.getElementById("confirmPassword");
     this.idUserEl = document.getElementById("id-user");
+
   }
 
   /**
@@ -24,7 +26,7 @@ export default class AuthenticationView {
       case "signUp":
         bindEvent(this.signUpFormEl, "submit", this.signUp(handler));
         break;
-      default:
+        default:
         break;
     }
   };
@@ -50,7 +52,7 @@ export default class AuthenticationView {
   redirectPage = (page) => {
     window.location.replace(page);
   };
- 
+
   /**
    * The signUp function handles the user registration event on the user interface.
    * @param {function} handler - Function to handle when the signUp event is triggered.

@@ -59,7 +59,6 @@ export default class UserController {
     const { data } = await this.getUsers();
     this.model.setUsers(data);
     this.view.renderTables(data);
-    console.log("test", data)
     this.view.bindCallback("userRowClick", this.handleShowUserDetails);
   };
 
@@ -79,10 +78,4 @@ export default class UserController {
   getUsers = async () => {
     return await UserService.fetchUsers();
   };
-
-  // // /**
-  // //  * The handleViewRecipes function displays the recipes list on the interface.
-  // //  */
-  // handleViewRecipes = async () => {
-  // };
 }

@@ -8,8 +8,13 @@ export default class RecipeController {
 
   init = async () => {
     this.handleViewRecipeHome();
+    this.view.bindCallback("logOut", this.handelLogOut)
   };
 
+  handelLogOut = async () => {
+    localStorage.removeItem("user");
+    this.view.redirectPage("login.html");
+  }
   /**
    * The handleViewRecipeHome function fetches recipes, updates the model with the fetched data,
    * and renders different types of recipes on the home view.

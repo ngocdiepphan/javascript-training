@@ -20,7 +20,6 @@ server.use(jsonServer.rewriter({
 server.use(router);
 
 server.listen(port, () => {
-    console.log('JSON Server is running on port: ', port);
 });
 
 module.exports = server;

@@ -90,6 +90,11 @@
 		@include cursor;
 	}
 
+  &__icon-logout {
+    width: toRem(20);
+		height: toRem(20);
+  }
+
 	#check {
 		display: none;
 
