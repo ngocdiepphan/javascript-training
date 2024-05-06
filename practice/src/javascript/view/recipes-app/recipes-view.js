@@ -18,6 +18,7 @@ export default class RecipesAppView {
       case "logOut":
         this.outEL.addEventListener("click", ()=>{
           localStorage.removeItem("user");
+          alert("Logout")
       });
         break;
       default:

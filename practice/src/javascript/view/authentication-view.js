@@ -10,7 +10,6 @@ export default class AuthenticationView {
     this.userNameEl = document.getElementById("username");
     this.passwordConfirmEl = document.getElementById("confirmPassword");
     this.idUserEl = document.getElementById("id-user");
-
   }
 
   /**

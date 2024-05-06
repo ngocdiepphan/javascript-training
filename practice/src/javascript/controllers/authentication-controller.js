@@ -18,10 +18,10 @@ export default class AuthenticationController {
    * @param {string} email - User's email address.
    * @param password {string} - User's password.
    */
-   handleSignIn = async (email, password, isSignIn) => {
-    const user = await AuthenticationService.signIn(email, password, isSignIn);
+   handleSignIn = async (email, password) => {
+    const user = await AuthenticationService.signIn(email, password);
 
-    localStorage.setItem("user", JSON.stringify({...user, isSignIn: true}))
+    localStorage.setItem("user", JSON.stringify({...user}))
     if (user.role === "admin") {
       this.view.redirectPage("dashboard.html");
     } else if (user.role === "user") {

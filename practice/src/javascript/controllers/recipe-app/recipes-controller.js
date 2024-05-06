@@ -14,6 +14,7 @@ export default class RecipeController {
   handelLogOut = async () => {
     localStorage.removeItem("user");
     this.view.redirectPage("login.html");
+    alert("Logout !")
   }
   /**
    * The handleViewRecipeHome function fetches recipes, updates the model with the fetched data,
