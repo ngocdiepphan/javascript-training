@@ -30,6 +30,7 @@ export default class DashBoardView {
         break;
     }
   };
+  
   /**
    * The newToggle function changes the display state of a form on the user interface upon a cli event
    * @param {object} event - Click event object.

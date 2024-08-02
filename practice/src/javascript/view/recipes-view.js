@@ -1,8 +1,7 @@
 import { bindEvent, delegate } from "../helpers";
 import {
   renderRecipeTableTemplate,
-  renderRecipeDetails,
-  renderListRecipesTemplate,
+  renderRecipeDetails
 } from "../templates/recipes";
 
 export default class RecipeView {

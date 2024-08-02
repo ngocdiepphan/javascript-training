@@ -59,7 +59,7 @@ export default class UserController {
     const { data } = await this.getUsers();
     this.model.setUsers(data);
     this.view.renderTables(data);
-    this.view.bindCallback("userRowClick", this.handleShowUserDetails);
+    this.view.bindCallback("userRowClick", this.handleShowUserDetails); // Bind a callback function to handle click events on user rows
   };
 
   /**

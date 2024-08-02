@@ -16,6 +16,7 @@ export default class RecipeController {
     this.view.redirectPage("login.html");
     alert("Logout !")
   }
+
   /**
    * The handleViewRecipeHome function fetches recipes, updates the model with the fetched data,
    * and renders different types of recipes on the home view.
