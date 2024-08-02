@@ -14,7 +14,7 @@ export default class RecipeController {
   handelLogOut = async () => {
     localStorage.removeItem("user");
     this.view.redirectPage("login.html");
-    alert("Logout !")
+    alert("Logout successfully")
   }
 
   /**

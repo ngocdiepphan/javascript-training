@@ -152,7 +152,7 @@ const renderRecipeDetailTemplate = (recipeItem) => {
           <div class="recipes-detail__info">
             <ul class="recipes-detail__item-info">
               <li class="recipes-detail__user">
-                <span class="recipes-detail__icon-avata recipes-detail__icon"></span>
+                <span class="recipes-detail__icon-avatar recipes-detail__icon"></span>
                 <p class="recipes-detail__name">${recipeItem.creator}</p>
               </li>
               <li class="recipes-detail__user">
@@ -193,7 +193,7 @@ const renderRecipeDetailTemplate = (recipeItem) => {
           </li>
         </ul>
         <div class="recipe-pages__content">
-          <div class="recipe-pages__wapper">
+          <div class="recipe-pages__wrapper">
               ${recipeItem.ingredient}
               ${recipeItem.nutrition}
           </div>
