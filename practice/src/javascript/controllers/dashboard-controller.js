@@ -9,5 +9,4 @@ export default class DashBoardController {
     this.view.bindCallback("closeToggle");
     this.view.bindCallback("displayPanel");
   };
-
 }

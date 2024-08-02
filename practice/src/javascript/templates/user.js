@@ -9,7 +9,7 @@ const userRowTemplate = (data) => {
         .map((item) => {
           return `
     <tr class="table__row user-row" data-id=${item.id}>
-      <td class="table__row__cell">
+      <td class="table__row__cell" >
         <p class="table__title user-name">${item.username}</p>
       </td>
       <td class="table__row__cell user-email">

@@ -1,8 +1,7 @@
 import { bindEvent, delegate } from "../helpers";
 import {
   renderRecipeTableTemplate,
-  renderRecipeDetails,
-  renderListRecipesTemplate,
+  renderRecipeDetails
 } from "../templates/recipes";
 
 export default class RecipeView {
@@ -17,7 +16,6 @@ export default class RecipeView {
     this.ratingEl = document.getElementById("input_ratings");
     this.instructEL = document.getElementById("input_instruction");
     this.ingredientEL = document.getElementById("input_ingredients");
-    this.nutriEL = document.getElementById("input_nutrition");
 
     this.tableWrapperEl = document.getElementById("table-wrapper");
     this.panelEl = document.querySelector(".panel");

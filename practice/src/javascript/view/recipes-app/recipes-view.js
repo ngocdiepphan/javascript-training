@@ -3,20 +3,35 @@ import {
   renderListRecipesByCollectionTemplate,
   renderListRecipesBySweetTemplate,
 } from "../../templates/recipes.js";
+import { bindEvent } from "../../helpers";
 
 export default class RecipesAppView {
   constructor() {
     this.recipesListEl = document.getElementById("latest-recipes");
     this.deliciousEl = document.getElementById("delicious-recipes");
     this.sweetEl = document.getElementById("sweet-recipes");
+    this.outEL = document.querySelector(".navbar__icon-logout");
   }
+
+  bindCallback = (event, handler) => {
+    switch (event) {
+      case "logOut":
+        this.outEL.addEventListener("click", ()=>{
+          localStorage.removeItem("user");
+          alert("Logout successfully!")
+      });
+        break;
+      default:
+        break;
+    }
+  };
 
   /**
    * The renderRecipe method renders a list of recipes on the page.
    * @param {array} data - An array of recipe objects to be rendered.
    */
   renderRecipe = (data) => {
-    // this.recipePageEl.innerHTML = renderRecipeHomeTemplet(data);
+    // this.recipePageEl.innerHTML = renderRecipeHomeTemplate(data);
     this.recipesListEl.innerHTML = renderListRecipesTemplate(data);
   };
 
@@ -35,16 +50,6 @@ export default class RecipesAppView {
   renderSweetRecipe = (data) => {
     this.sweetEl.innerHTML = renderListRecipesBySweetTemplate(data);
   };
-
-  /**
-   * The showRecipeById function handles the event of displaying a recipe by its ID.
-   * @param {function} handler - The callback function to handle the display of the recipe.
-   * @returns {function} - An event handler function.
-   */
-  // showRecipeById = (handler) => (event) => {
-  //   const recipesId = event.target.closest(".latest-recipes").dataset.id;
-  //   handler(recipesId);
-  // };
 
   /**
    * The showPageRecipeDetails function renders the details of a recipe on the page.

@@ -10,6 +10,7 @@ export default class AuthenticationController {
   init = async () => {
     this.view.bindCallback("signIn", this.handleSignIn);
     this.view.bindCallback("signUp", this.signUp);
+    // this.view.bindCallback("logOut", this.handelLogOut)
   };
 
    /**
@@ -20,7 +21,7 @@ export default class AuthenticationController {
    handleSignIn = async (email, password) => {
     const user = await AuthenticationService.signIn(email, password);
 
-    localStorage.setItem("user", JSON.stringify(user))
+    localStorage.setItem("user", JSON.stringify({...user}))
     if (user.role === "admin") {
       this.view.redirectPage("dashboard.html");
     } else if (user.role === "user") {

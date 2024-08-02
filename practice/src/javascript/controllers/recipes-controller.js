@@ -19,12 +19,11 @@ export default class RecipeController {
     const { data } = await this.getRecipes();
     this.model.setRecipes(data);
     this.view.renderTableRecipes(data);
-    this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails);
+    this.view.bindCallback("recipeRowClick", this.handleShowRecipeDetails); // Bind a callback function to handle click events on recipe rows
   };
 
   /**
    * The getRecipes function retrieves a list of recipes from the server through UserService.
-   *
    * @returns {Promise} - A Promise containing recipe list data from the server.
    */
   getRecipes = async () => {
@@ -63,7 +62,7 @@ export default class RecipeController {
     newRecipeCategory,
     newRecipeCreator,
     newRecipeRating,
-    newRecipeDescription,
+    newRecipeDescription
   ) => {
     try {
       const recipe = this.model.getRecipeById(recipeId);
@@ -74,13 +73,13 @@ export default class RecipeController {
         category: newRecipeCategory,
         creator: newRecipeCreator,
         ratings: newRecipeRating,
-        description: newRecipeDescription
+        description: newRecipeDescription,
       });
 
       alert("Updated recipe successfully!");
       this.handleViewRecipes();
     } catch (error) {
-      alert("Failed to update user");
+      alert("Failed to update recipe");
     }
   };
 
@@ -107,7 +106,7 @@ export default class RecipeController {
     description,
     instruction,
     ingredient,
-    nutrition
+    nutrition,
   }) => {
     await RecipeService.createRecipe({
       name,
